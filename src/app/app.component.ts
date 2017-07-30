@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Application Demo';
+  components = ["Comp1Component", "Comp2Component"];
+  selectedComponent;
+  constructor() {
+    var i = 0;
+    setInterval(() => {
+        this.selectedComponent = this.components[i++ % 2];
+    }, 2000);
+  }
 }
